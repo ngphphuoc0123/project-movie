@@ -1,0 +1,107 @@
+.appHomeControl {
+  background-image: url(../../img/backgroung.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 700px;
+  .row {
+    padding-top: 100px;
+  }
+
+  .left {
+    padding-left: 120px;
+    padding-top: 60px;
+  }
+  .right {
+    padding: 0;
+    img {
+      height: 101%;
+
+      width: 100%;
+      padding: 0 28%;
+      position: relative;
+    }
+  }
+  .textLeft {
+    color: #fff;
+    font-weight: 700;
+    font-size: xx-large;
+    margin: 32px 0px;
+  }
+  .textSmallLeft {
+    color: #fff;
+    font-size: medium;
+    margin-bottom: 20px;
+  }
+  .buttonLeft {
+    background-color: #fb4226;
+    font-size: medium;
+    font-weight: 700;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+  }
+  .textAppUnder {
+    color: #fff;
+    padding-top: 10px;
+    a {
+      color: white;
+      border-bottom: 1px solid #fff;
+      text-decoration: none;
+    }
+  }
+
+  .slickSlide {
+    position: absolute;
+    padding: 2.2% 29.3% 0 29.3%;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 20px;
+    .draggable {
+      border-radius: 26px;
+      height: 505px;
+      width: 237px;
+    }
+    .slick-arrow {
+      display: none !important;
+    }
+  }
+  .single-item-rtl {
+    width: 100%;
+    height: 100%;
+    img {
+      width: 100%;
+      padding: 0;
+    }
+    .slick-list {
+      border-radius: 20px;
+    }
+  }
+}
+@media (max-width: 375px) {
+  .appHomeControl {
+    height: 850px;
+
+    .left {
+      padding: 0;
+      text-align: center;
+      .textLeft {
+        font-size: 27px;
+        padding: 0 10px;
+      }
+    }
+    .col-6 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+  .mobile {
+    display: block;
+  }
+  .footer{
+    .row {
+      display: none;
+    }
+  }
+}

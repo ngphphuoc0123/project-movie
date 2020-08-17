@@ -1,0 +1,25 @@
+.MuiTableContainer-root {
+}
+.makeStyles-table-1 {
+  min-width: 400px !important;
+}
+.userInfo {
+  padding: 20px;
+  padding-top: 0em;
+}
+.button {
+  border: none;
+  background-color: #0062cc;
+  color: white;
+  border-radius: 50px;
+  height: 40px;
+  line-height: 35px;
+  &:hover {
+    background-color: #0069d9;
+  }
+  width: 255px;
+  margin: 0 20px 20px 30px;
+  a {
+    margin: 0;
+  }
+}

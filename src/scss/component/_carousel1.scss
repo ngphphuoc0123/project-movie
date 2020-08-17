@@ -1,0 +1,101 @@
+.background-black {
+  height: 60px;
+  width: 100%;
+  background-color: black;
+}
+.single-item {
+  padding-top: 60px;
+
+  position: relative;
+  .slick-arrow,
+  .slick-prev {
+    position: absolute;
+    top: 52%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    width: 50px;
+    height: 100px;
+    z-index: 2;
+    opacity: 0.5;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    &:before {
+      font-size: 40px;
+    }
+  }
+  .comboBox {
+    justify-content: center;
+    display: flex;
+    // display: block;
+    max-width: 940px;
+    height: 80px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    .comboBox-phim {
+      width: 25% !important;
+    }
+    .comboBox-item {
+      width: 19%;
+      margin: 12px 0;
+      height: 60px;
+      fieldset {
+        border: none;
+      }
+    }
+    .button {
+      margin: 12px 0;
+      height: 56px;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.12);
+      border: none;
+      text-transform: uppercase;
+      border-radius: 4px;
+      // position: absolute;
+      // top: 50%;
+      // left: 50%;
+      // transform: translate(-50%,-50%);
+      padding: 10px 25px;
+    }
+    .active {
+      background-color: black;
+      transition: 0.2s;
+      &:hover {
+        color: black;
+        background-color: #f7971e !important;
+      }
+    }
+  }
+
+  .slick-prev {
+    left: 0px;
+  }
+  .slick-next {
+    right: 50px;
+  }
+  .slick-prev,
+  .slick-next {
+    &:before {
+      font-size: 100px;
+      color: #f7971e;
+    }
+  }
+}
+@media (max-width: 375px) {
+  .single-item{
+    display: none;
+  }
+}
+

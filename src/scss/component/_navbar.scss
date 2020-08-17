@@ -1,0 +1,189 @@
+.navbar {
+  z-index: 999;
+  height: 60px;
+  width: 100%;
+  opacity: 1;
+  background-color: black;
+  .nav-modal {
+    background-color: black;
+    height: 100px;
+    width: 100px;
+  }
+  .navbar-brand {
+    img {
+      border-radius: 20px;
+
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      width: 130px;
+    }
+  }
+  .navbar-collapse {
+    .navbar-nav {
+      margin-left: 37%;      align-items: center;
+    }
+    .nav-item {
+      .nav-link {
+        color: white;
+        transition: all 0.2s;
+        text-decoration: none;
+        margin-right: 20px;
+        font-size: 20px;
+        transition: all 0.2s;
+        font-weight: 500;
+
+        &:hover {
+          color: red !important;
+        }
+        a {
+          color: white;
+        }
+      }
+    }
+  }
+  .nav-right {
+    margin-left: 500px;
+    align-items: center;
+    display: flex;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+
+    .logOut {
+      cursor: pointer;
+      margin-bottom: 0;
+      &:hover {
+        color: red !important;
+      }
+    }
+    .nav-right-login {
+      border-right: 1px solid white;
+      margin: 0 10px;
+      padding: 0 10px;
+      cursor: pointer;
+    }
+  }
+}
+#myModal {
+  .modal-dialog {
+    max-width: 1500px;
+    .modal-content {
+      height: 800px;
+      overflow: scroll;
+    }
+    .userInformation {
+      .MuiGrid-grid-sm-3 {
+      }
+      .MuiGrid-grid-sm-9 {
+        .MuiTableContainer-root {
+          height: 700px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .background-black {
+    height: 50px;
+  }
+  .navbar {
+    height: 50px;
+    .navbar-toggler {
+      margin-right: 20px;
+    }
+    .navbar-brand {
+      img {
+        left: 10px;
+        width: 90px;
+      }
+    }
+    .navbar-collapse {
+      background-color: #343a40;
+      margin-left:150px;
+      margin-right: -16px;
+      .navbar-nav {
+        margin: 0;
+        align-items: flex-end;
+      }
+      .nav-item {
+        margin: 5px 0;
+      }
+      .nav-right {    align-items: baseline;
+
+        margin-left: 0;
+        margin-right: 20px;
+        margin-top: 5px;
+        height: 500px;
+        a {
+          color: white;
+        }
+        .logOut {
+          cursor: pointer;
+          margin-bottom: 0;
+          &:hover {
+            color: red !important;
+          }
+        }
+        .nav-right-login {
+          border-right: 1px solid white;
+          margin: 0 10px;
+          padding: 0 10px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .makeStyles-paper-2 {
+    top: 0;
+    left: 0;
+    width: 0;
+  }
+  #myModal2 {
+    .modal-dialog {
+      position: relative;
+      margin: 0;
+      .modal-content {
+        transition: 0.5s;
+        position: absolute;
+        background-color: #343a40;
+        right: 0;
+        width: 200px;
+        height: 100vh;
+        .nav-item {
+          text-decoration: none;
+          list-style: none;
+          display: inline;
+          .nav-link {
+            text-decoration: none;
+            color: white;
+            font-weight: 400;
+            font-size: 15px;
+
+            padding: 10px 20px;
+          }
+        }
+        .nav-right {
+          display: flex;
+          font-size: 15px;
+          font-weight: 400;
+          color: white;
+          padding: 15px 0;
+          .nav-right-login {
+            margin: 0 10px;
+            padding: 0 10px;
+            margin-bottom: 0;
+            border-right: 1px solid white;
+          }
+          .logOut {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}

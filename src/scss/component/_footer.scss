@@ -1,0 +1,51 @@
+.footer {
+  background-color: #222;
+  height: 400px;
+  .tittle {
+    color: white;
+    font-size: 80%;
+    
+  }
+  .left {
+      display: flex;
+  }
+  .col-6 {
+      padding-left: 0;
+      margin: 0px;
+  }
+  .aDecor {
+    a {
+        text-decoration: none;
+      font-size: 12px !important;
+      font-size: 80%;
+      font-weight: 700;
+      white-space: nowrap;
+      color: #949494;
+      display: block;
+      -webkit-transition: all 0.2s;
+      -o-transition: all 0.2s;
+      transition: all 0.2s;
+      line-height: 2.3;
+    }
+  }
+  .iconConnect {
+    background-color: #fff;
+
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    margin-right: 15px;
+  }
+  .iconApp {
+    background: 0 0;
+    height: 30px;
+    width: auto;
+    margin: 5px;
+  }
+  .textCenter {
+      text-align: center;
+  }
+  .hrFooter {
+    border-top: 1px solid #4a4a4a;
+  }
+}

@@ -1,0 +1,132 @@
+.news {
+  .news-button {
+    margin: 50px 490px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    .classButton {
+      width: 100%;
+      color: grey;
+      border: 1px solid grey;
+      &:hover {
+        color: white;
+        border: 1px solid #fb4226;
+        background-color: #fb4226;
+      }
+    }
+  }
+  .news-icon {
+    display: flex;
+    height: 25px;
+    margin-bottom: 10px;
+    align-items: center;
+    color: #8080809c;
+
+    p {
+      margin: 0 30px 0 15px;
+    }
+    svg {
+      transition: all 0.2s;
+
+      &:hover {
+        transform: scale(1.1) !important;
+      }
+    }
+  }
+  .newTitle {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    line-height: 20px;
+    font-family: "SF Medium";
+    height: 42px;
+    font-size: 16px;
+    -webkit-transition: color 0.2s;
+    -o-transition: color 0.2s;
+    transition: color 0.2s;
+    margin-bottom: 5px;
+    font-weight: bold;
+
+    &:hover {
+      color: #fb4226;
+    }
+  }
+  .newDescription {
+    text-align: justify;
+    font-size: 13px;
+    color: #4a4a4a;
+    font-family: "SF Regular";
+    padding: 0 5px 0 0;
+    line-height: 19px;
+    letter-spacing: 0.17;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    height: 55px;
+    margin-bottom: 15px;
+  }
+  clear: both;
+  .news-menu {
+    ul {
+      text-align: center;
+      li {
+        text-decoration: none;
+        list-style: none;
+        display: inline;
+        text-align: center;
+        a {
+          text-decoration: none;
+          color: black;
+          font-weight: 500;
+          font-size: 20px;
+          margin: 0 20px;
+          transition: all 0.2s;
+          &:hover {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+  }
+  .news-content {
+    .news-content1 {
+      .content1 {
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 4px;
+          -webkit-transition: all 0.2s;
+          -o-transition: all 0.2s;
+          transition: all 0.2s;
+        }
+      }
+      .content2 {
+        clear: both;
+        img {
+          height: 50px;
+          width: 50px;
+          float: left;
+          margin-right: 10px;
+          cursor: pointer;
+          overflow: hidden;
+          border-radius: 4px;
+          background-color: #e8e8e8;
+          position: relative;
+          margin-bottom: 10px;
+        }
+        p {
+          float: left;
+          width: calc(100% - 70px);
+          opacity: 0.7;
+          font-family: "SF Regular";
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

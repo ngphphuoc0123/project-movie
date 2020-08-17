@@ -1,0 +1,20 @@
+.search {
+    border: 1px solid black;
+    width: 75%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    .search-bar {
+      border: none;
+      position: relative;
+      align-items: center;
+      width: 98%;
+      margin-left: 2%;
+      box-shadow: none;
+    }
+    .search-icon {
+      position: absolute;
+      top: 176px;
+      left: 7px;
+  
+    }
+  }
