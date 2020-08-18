@@ -1,11 +1,9 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import { fetchCinemaDetailAction } from "../../../../../../Redux/Action/CinemaAction";
-import { Link } from "react-router-dom";
 import { services } from "../../../../Services";
 import { withRouter } from "react-router-dom";
 import FilmTime from "./FilmTime";
-import Swal from "sweetalert2";
 
 class LichChieuTheoRap extends Component {
   constructor(props) {
@@ -25,19 +23,20 @@ class LichChieuTheoRap extends Component {
   };
   changePage = (maLichChieu) => {
     let { movieDetail } = this.props;
-    if (movieDetail) {
-      localStorage.setItem("maLichChieu", maLichChieu);
+    services.changePage(movieDetail,maLichChieu)
+    // if (movieDetail) {
+    //   localStorage.setItem("maLichChieu", maLichChieu);
 
-      if (JSON.parse(localStorage.getItem("credentials"))) {
-        this.props.history.push(`/booking/${maLichChieu}`);
-      } else {
-        {
-          Swal.fire('Bạn phải đăng nhập để có thể mua vé !!!','', "error").then(()=>{
-            this.props.history.push(`/signin`);
-          })
-        }
-      }
-    }
+    //   if (JSON.parse(localStorage.getItem("credentials"))) {
+    //     this.props.history.push(`/booking/${maLichChieu}`);
+    //   } else {
+    //     {
+    //       Swal.fire('Bạn phải đăng nhập để có thể mua vé !!!','', "error").then(()=>{
+    //         this.props.history.push(`/signin`);
+    //       })
+    //     }
+    //   }
+    // }
   };
   checkMaHeThongRap = () => {
     let { listCinema } = this.props;

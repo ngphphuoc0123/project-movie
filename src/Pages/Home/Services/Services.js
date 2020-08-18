@@ -5,6 +5,7 @@ import imgCNS from "../../../img/cinestarci.jpg";
 import imgLOTTE from "../../../img/lotteci.jpg";
 import imgGALAXY from "../../../img/galaxyci.jpg";
 import imgMEGA from "../../../img/megaci.jpg";
+import Swal from "sweetalert2";
 
 class Services extends Component{
   renderLogo = (maHeThongRap) => {
@@ -32,7 +33,21 @@ class Services extends Component{
         break;
     }
   };
+  changePage = (movieDetail,maLichChieu) => {
+    if (movieDetail) {
+      localStorage.setItem("maLichChieu", maLichChieu);
 
+      if (JSON.parse(localStorage.getItem("credentials"))) {
+        this.props.history.push(`/booking/${maLichChieu}`);
+      } else {
+        {
+          Swal.fire('Bạn phải đăng nhập để có thể mua vé !!!','', "error").then(()=>{
+            this.props.history.push(`/signin`);
+          })
+        }
+      }
+    }
+  };
 }
 
 export default Services;

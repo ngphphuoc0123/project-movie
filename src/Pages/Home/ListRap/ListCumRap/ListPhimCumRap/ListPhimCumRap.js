@@ -8,8 +8,15 @@ class ListPhimCumRap extends Component {
     this.state = {
       maCumRap: "",
       maHeThongRap: "",
+      date: "1/1/2019",
+      activeDay: "",
     };
   }
+  setStateDate = (value) => {
+    this.setState({
+      date: value,
+    });
+  };
   checkMaHeThongRap = () => {
     let { listCinema } = this.props;
     let arr = "";
@@ -59,7 +66,9 @@ class ListPhimCumRap extends Component {
             </div>
 
             <div className="date-time" style={{ paddingright: "10px" }}>
-              {this.renderFilmDateTime(film.maPhim)}
+              <div className="date">
+                {this.renderFilmDateTime(film.maPhim, film.tenPhim)}
+              </div>
             </div>
           </div>
         );
@@ -67,12 +76,12 @@ class ListPhimCumRap extends Component {
     }
   }
   renderDateSlice = (maPhim) => {
-    let date = this.checkMaCumRap().danhSachPhim.find(
+    let film = this.checkMaCumRap().danhSachPhim.find(
       (phim) => maPhim === phim.maPhim
     );
     // lấy ra danh sách ngày chiếu (có trùng ngày do 1 ngày nhiều suất chiếu)
-    if (date.lstLichChieuTheoPhim) {
-      let listDay = date.lstLichChieuTheoPhim.map((item) => {
+    if (film.lstLichChieuTheoPhim) {
+      let listDay = film.lstLichChieuTheoPhim.map((item) => {
         return new Date(item.ngayChieuGioChieu).toLocaleDateString();
       });
 
@@ -81,19 +90,31 @@ class ListPhimCumRap extends Component {
 
       // lọc ra giữ lại 2 ngày đầu tiên
       let listDaySlice = listDaySort.slice(0, 2);
-
       return listDaySlice;
     }
   };
   renderFilmDateTime = (maPhim) => {
-    return this.renderDateSlice(maPhim).map((day) => {
-      console.log(  );
+    return this.renderDateSlice(maPhim).map((day, index) => {
+      console.log();
       return (
         <Fragment>
-          <div className="date" style={{ padding: "10px" }}>
+          {/* <div className="date" style={{ padding: "10px" }}>
             {day}
           </div>
-          <div className="time">{this.renderFilmTime(maPhim, day)}</div>
+          <div className="time">{this.renderFilmTime(maPhim, day)}</div> */}
+          <div
+            key={index}
+            className={
+              index === this.state.activeDay ? "active date-item" : "date-item"
+            }
+            style={{ padding: "10px" }}
+            onClick={() => {
+              this.setState({ activeDay: index });
+              this.setStateDate(day);
+            }}
+          >
+            <p>{day}</p>
+          </div>
         </Fragment>
       );
     });
@@ -101,12 +122,12 @@ class ListPhimCumRap extends Component {
 
   renderFilmTime = (maPhim, day) => {
     // sort ra lịch chiếu của từng phim
-    let time = this.checkMaCumRap().danhSachPhim.find(
+    let film = this.checkMaCumRap().danhSachPhim.find(
       (phim) => maPhim === phim.maPhim
     );
 
     // lọc ra suất chiếu theo ngày
-    let arrTimeDate = time.lstLichChieuTheoPhim.filter((item) => {
+    let arrTimeDate = film.lstLichChieuTheoPhim.filter((item) => {
       return new Date(item.ngayChieuGioChieu).toLocaleDateString() === day;
     });
 

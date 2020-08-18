@@ -55,7 +55,6 @@ class ListMovie extends Component {
     }
   };
   render() {
-    console.log(this.trailer());
     const settings = this.settings();
     return (
       <Fragment>
