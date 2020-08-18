@@ -8,8 +8,11 @@
       position: relative;
       align-items: center;
       width: 98%;
-      margin-left: 2%;
+      padding-left: 3%;
       box-shadow: none;
+      &:focus{
+        border:none;
+      }
     }
     .search-icon {
       position: absolute;

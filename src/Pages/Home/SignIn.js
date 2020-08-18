@@ -8,6 +8,7 @@ import { Redirect, Link } from "react-router-dom";
 class SignIn extends Component {
 
   render() {
+    localStorage.clear()
     return (
       <Formik
         initialValues={{

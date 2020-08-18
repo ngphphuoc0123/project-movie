@@ -48,7 +48,7 @@ class App extends Component {
           {/* <Route path="/signup" exact component={SignUp} />
           <Route path="/detail/:movieId" exact component={MovieDetail} />
           <Route path="/" exact component={HomeScreens} />*/}
-        {/* <Route path="/dat-ve/:maLichChieu" exact component={Booking} /> */}
+        {/* <Route path="/booking/:maLichChieu" exact component={Booking} /> */}
         </Switch>
       </BrowserRouter>
     );

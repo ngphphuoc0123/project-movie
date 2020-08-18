@@ -30,7 +30,7 @@ export default function AdminTemplate({ Component, ...props }) {
           );
         } else if (localStorage.getItem("credentials")) {
           //Chưa Login
-          Swal.fire("Bạn Không Phải Là Quản Trị Viên !!", '', "error")
+          Swal.fire("Bạn Không Có Quyền Đăng Nhập Trang Này !!", '', "error")
           return <Redirect to="/" />;
         } else {
           Swal.fire("Bạn Phải Đăng Nhập Để Được Vào Quyền Admin !!", '', "error")

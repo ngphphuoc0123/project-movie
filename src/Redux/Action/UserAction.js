@@ -21,7 +21,7 @@ export const actCheckSignInUser = (user, history) => {
             console.log(maLichChieu);
             dispatch(createAction(FETCH_CREDENTIAL, rs.data));
             localStorage.setItem("credentials", JSON.stringify(rs.data));
-            history.push(`/dat-ve/${maLichChieu}`);
+            history.push(`/booking/${maLichChieu}`);
           } else if (localStorage.getItem("Admin")) {
             dispatch(createAction(FETCH_CREDENTIAL, rs.data));
             localStorage.setItem("credentials", JSON.stringify(rs.data));

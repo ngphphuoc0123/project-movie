@@ -32,7 +32,7 @@ class SignUp extends Component {
               hoTen: "",
               email: "",
               soDT: "",
-              loaiNguoiDung: "KhachHang",
+              maLoaiNguoiDung: "KhachHang",
               maNhom: "GP01",
             }}
             validationSchema={signupUserSchema}

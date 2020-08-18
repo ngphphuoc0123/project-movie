@@ -13,7 +13,7 @@ const routesHome = [
     component: MovieDetail,
   },
   {
-    path: "/dat-ve/:maLichChieu",
+    path: "/booking/:maLichChieu",
     exact: false,
     component: Booking,
   },

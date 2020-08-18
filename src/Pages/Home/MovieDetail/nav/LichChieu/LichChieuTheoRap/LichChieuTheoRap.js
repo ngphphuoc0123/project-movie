@@ -29,7 +29,7 @@ class LichChieuTheoRap extends Component {
       localStorage.setItem("maLichChieu", maLichChieu);
 
       if (JSON.parse(localStorage.getItem("credentials"))) {
-        this.props.history.push(`/dat-ve/${maLichChieu}`);
+        this.props.history.push(`/booking/${maLichChieu}`);
       } else {
         {
           Swal.fire('Bạn phải đăng nhập để có thể mua vé !!!','', "error").then(()=>{

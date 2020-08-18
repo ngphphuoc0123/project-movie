@@ -22,7 +22,7 @@ class ComboBox extends Component {
     let { listMovie,history} = this.props;
     if (listMovie) {
       if (JSON.parse(localStorage.getItem("credentials"))) {
-        this.props.history.push(`/dat-ve/${this.state.maLichChieu}`);
+        this.props.history.push(`/booking/${this.state.maLichChieu}`);
       } else {
         {
           Swal.fire('Bạn phải đăng nhập để có thể mua vé !!!','', "error").then(()=>{
