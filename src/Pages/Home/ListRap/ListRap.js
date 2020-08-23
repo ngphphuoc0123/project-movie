@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchCinemaAction } from "../../../Redux/Action/CinemaAction";
-import ListCumRap from "./ListCumRap/ListCumRap";
+import ListCumRap from "./ListCumRap";
 
 class ListRap extends Component {
   constructor(props) {

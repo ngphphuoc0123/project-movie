@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchCinemaAction } from "../../../../../Redux/Action/CinemaAction";
-import LichChieuTheoRap from "./LichChieuTheoRap/LichChieuTheoRap";
+import { fetchCinemaAction } from "../../../Redux/Action/CinemaAction";
+import LichChieuTheoRap from "./LichChieuTheoRap";
 
 class LichChieu extends Component {
   constructor(props) {
@@ -9,7 +9,7 @@ class LichChieu extends Component {
     this.state = {
       maHeThongRap: "",
       maCumRap: "",
-      activeCinema:''
+      activeCinema: "",
     };
   }
   setStateMaHeThongRap = (maHeThongRap) => {
@@ -32,18 +32,23 @@ class LichChieu extends Component {
         //cinema show ra 1 danh sách rạp (CGV, lotte, blabla ) bao gồm cả hình ảnh logo
         // render ra logo theo rạp
         let logo = cinema.find((itemrap) => {
-          
           return itemrap.maHeThongRap === item;
         });
         return (
           <li
             key={index}
             onClick={() => {
-              this.setState({activeCinema:index})
+              this.setState({ activeCinema: index });
               this.setStateMaHeThongRap(logo.maHeThongRap);
             }}
           >
-            <div className={index === this.state.activeCinema ? "tab-cinema active" : "tab-cinema"}>
+            <div
+              className={
+                index === this.state.activeCinema
+                  ? "tab-cinema active"
+                  : "tab-cinema"
+              }
+            >
               <img src={logo.logo} />
               <p className="cinema-name">{logo.tenHeThongRap}</p>
             </div>
@@ -55,13 +60,15 @@ class LichChieu extends Component {
   render() {
     return (
       <div className="container">
-        <div className="table-cinema">
-          <ul>{this.renderCinema()}</ul>
+        <div className="table" id='table'>
+          <div className="table-cinema">
+            <ul>{this.renderCinema()}</ul>
+          </div>
+          <LichChieuTheoRap
+            maHeThongRap={this.state.maHeThongRap}
+            maCumRap={this.state.maCumRap}
+          />
         </div>
-        <LichChieuTheoRap
-          maHeThongRap={this.state.maHeThongRap}
-          maCumRap={this.state.maCumRap}
-        />
       </div>
     );
   }
@@ -72,6 +79,6 @@ class LichChieu extends Component {
 const mapStateToProps = (state) => ({
   cinema: state.MovieReducer.cinema,
   movieDetail: state.MovieReducer.movieDetail,
-})
+});
 
 export default connect(mapStateToProps)(LichChieu);

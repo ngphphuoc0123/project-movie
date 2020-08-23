@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
-import { fetchCinemaDetailAction } from "../../../../Redux/Action/CinemaAction";
-import ListPhimCumRap from "./ListPhimCumRap/ListPhimCumRap";
-import { services } from "../../Services"
+import { fetchCinemaDetailAction } from "../../../Redux/Action/CinemaAction";
+import ListPhimCumRap from "./ListPhimCumRap";
+import { services } from "../Services";
 
 class ListCumRap extends Component {
   constructor(props) {
@@ -10,18 +10,13 @@ class ListCumRap extends Component {
     this.state = {
       maHeThongRap: "BHDStar",
       maCumRap: "bhd-star-cineplex-pham-hung",
+      active: '',
     };
   }
 
- 
-  getMaCumRap = (value) => {
-    this.setState({
-      maCumRap: value,
-    });
-  };
   checkMaHeThongRap = () => {
-    let { listCinema } = this.props;    
-    let arr = ""; 
+    let { listCinema } = this.props;
+    let arr = "";
     if (listCinema) {
       arr = listCinema.find(
         (list) => this.state.maHeThongRap === list.maHeThongRap
@@ -37,10 +32,10 @@ class ListCumRap extends Component {
         return (
           <Fragment>
             <div
-              className="cinema-detail"
+              className={index === this.state.active ? "active cinema-detail" : "cinema-detail"}
               key={index}
               onClick={() => {
-                this.getMaCumRap(item.maCumRap);
+                this.setState({ maCumRap: item.maCumRap, active: index });
               }}
             >
               {services.renderLogo(this.state.maHeThongRap)}

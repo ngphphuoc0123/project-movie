@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
-import { fetchCinemaDetailAction } from "../../../../../../Redux/Action/CinemaAction";
-import { services } from "../../../../Services";
+import { fetchCinemaDetailAction } from "../../../Redux/Action/CinemaAction";
+import { services } from "../Services";
 import { withRouter } from "react-router-dom";
 import FilmTime from "./FilmTime";
 
@@ -22,21 +22,8 @@ class LichChieuTheoRap extends Component {
     });
   };
   changePage = (maLichChieu) => {
-    let { movieDetail } = this.props;
-    services.changePage(movieDetail,maLichChieu)
-    // if (movieDetail) {
-    //   localStorage.setItem("maLichChieu", maLichChieu);
-
-    //   if (JSON.parse(localStorage.getItem("credentials"))) {
-    //     this.props.history.push(`/booking/${maLichChieu}`);
-    //   } else {
-    //     {
-    //       Swal.fire('Bạn phải đăng nhập để có thể mua vé !!!','', "error").then(()=>{
-    //         this.props.history.push(`/signin`);
-    //       })
-    //     }
-    //   }
-    // }
+    let { movieDetail,history } = this.props;
+    services.changePage(movieDetail,maLichChieu,history)
   };
   checkMaHeThongRap = () => {
     let { listCinema } = this.props;
@@ -110,8 +97,7 @@ class LichChieuTheoRap extends Component {
 
     if (xuatChieu !== "") {
       xuatChieu = xuatChieu.filter((item) => item);
-
-      return xuatChieu.map((time, index) => {
+        return xuatChieu.map((time, index) => {
         // lấy mã lịch chiếu để chuyển sang trang booking
         if (movieDetail) {
           if (movieDetail.lichChieu) {

@@ -18,7 +18,6 @@ export const actCheckSignInUser = (user, history) => {
             history.push("/adminUser");
           } else if (JSON.parse(localStorage.getItem("maLichChieu"))) {
             let maLichChieu = JSON.parse(localStorage.getItem("maLichChieu"));
-            console.log(maLichChieu);
             dispatch(createAction(FETCH_CREDENTIAL, rs.data));
             localStorage.setItem("credentials", JSON.stringify(rs.data));
             history.push(`/booking/${maLichChieu}`);

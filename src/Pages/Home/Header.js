@@ -7,6 +7,119 @@ import { FETCH_CREDENTIAL } from "../../Redux/Action/Type";
 import UserInfo from "../UserInfo/UserInfo";
 
 class Header extends Component {
+  renderNavbarItem = () => {
+    let { navbar } = this.props;
+    switch (navbar) {
+      case "movieDetail":
+        return (
+          <Fragment>
+            <li className="nav-item">
+              <Link to='../' className="nav-link" href="#">
+                Trang Chủ
+              </Link>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#table">
+                Thông Tin Phim
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#table">
+                Lịch Chiếu
+              </a>
+            </li>
+            <li className="nav-item nav-right">
+              {this.props.credential ? (
+                <Fragment>
+                  {/* <i className="fas fa-user-circle" /> */}
+                  <p
+                    type="button"
+                    className="nav-right-login"
+                    data-toggle="modal"
+                    data-target="#myModal"
+                  >
+                    Hi, {this.props.credential.hoTen}{" "}
+                  </p>
+                  <p
+                    className="logOut"
+                    onClick={() => {
+                      this.props.cancelUser();
+                    }}
+                  >
+                    Thoát
+                  </p>
+                </Fragment>
+              ) : (
+                <>
+                  <div>
+                    {/* <i className="fas fa-user-circle" /> */}
+                    <Link to="/signin">Đăng Nhập</Link>
+                  </div>
+                </>
+              )}
+            </li>
+          </Fragment>
+        );
+        break;
+
+      default:
+        return (
+          <Fragment>
+            <li className="nav-item">
+              <a className="nav-link" href="#listFilm">
+                Lịch Chiếu
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#cinema">
+                Cụm Rạp
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#appHomeControl">
+                Tin Tức
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#appHomeControl">
+                Ứng Dụng
+              </a>
+            </li>
+            <li className="nav-item nav-right">
+              {this.props.credential ? (
+                <Fragment>
+                  {/* <i className="fas fa-user-circle" /> */}
+                  <p
+                    type="button"
+                    className="nav-right-login"
+                    data-toggle="modal"
+                    data-target="#myModal"
+                  >
+                    Hi, {this.props.credential.hoTen}{" "}
+                  </p>
+                  <p
+                    className="logOut"
+                    onClick={() => {
+                      this.props.cancelUser();
+                    }}
+                  >
+                    Thoát
+                  </p>
+                </Fragment>
+              ) : (
+                <>
+                  <div>
+                    {/* <i className="fas fa-user-circle" /> */}
+                    <Link to="/signin">Đăng Nhập</Link>
+                  </div>
+                </>
+              )}
+            </li>
+          </Fragment>
+        );
+        break;
+    }
+  };
   render() {
     return (
       <Fragment>
@@ -25,56 +138,7 @@ class Header extends Component {
 
           <div className="collapse navbar-collapse" id="collapsibleNavbar">
             <ul className="navbar-nav">
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Lịch Chiếu
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Cụm Rạp
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Tin Tức
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Ứng Dụng
-                </a>
-              </li>
-              <li className="nav-item nav-right">
-                {this.props.credential ? (
-                  <Fragment >
-                    {/* <i className="fas fa-user-circle" /> */}
-                    <p
-                      type="button"
-                      className="nav-right-login"
-                      data-toggle="modal"
-                      data-target="#myModal"
-                    >
-                      Hi, {this.props.credential.hoTen}{" "}
-                    </p>
-                    <p
-                      className="logOut"
-                      onClick={() => {
-                        this.props.cancelUser();
-                      }}
-                    >
-                      Thoát
-                    </p>
-                   </Fragment>
-                ) : (
-                  <>
-                    <div>
-                      {/* <i className="fas fa-user-circle" /> */}
-                      <Link to="/signin">Đăng Nhập</Link>
-                    </div>
-                  </>
-                )}
-              </li>
+              {this.renderNavbarItem()}
             </ul>
           </div>
           {/* modal lịch sử đặt vé */}

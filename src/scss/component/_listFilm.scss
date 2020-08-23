@@ -46,26 +46,6 @@
     .slick-next {
       right: -50px;
     }
-    // .slick-arrow,
-    // .slick-prev {
-    //   position: absolute;
-    //   top: 52%;
-    //   -webkit-transform: translateY(-50%);
-    //   -ms-transform: translateY(-50%);
-    //   transform: translateY(-50%);
-    //   background-color: transparent;
-    //   border: none;
-    //   width: 50px;
-    //   height: 100px;
-    //   z-index: 2;
-    //   opacity: 0.5;
-    //   background-repeat: no-repeat;
-    //   background-position: center;
-    //   background-size: contain;
-    //   &:before {
-    //     font-size: 40px;
-    //   }
-    // }
     padding-top: 30px;
     .film-item {
       height: 420px;
@@ -145,7 +125,8 @@
 #Trailer{
   .modal-dialog {
     max-width: 1000px;
-    
+    height: 50%;
+    margin: 10% auto;
   }
 }
 @media (max-width: 375px) {

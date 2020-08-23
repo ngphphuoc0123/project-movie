@@ -24,7 +24,8 @@
   }
   .navbar-collapse {
     .navbar-nav {
-      margin-left: 37%;      align-items: center;
+      margin-left: 37%;
+      align-items: center;
     }
     .nav-item {
       .nav-link {
@@ -86,6 +87,63 @@
     }
   }
 }
+@media screen and (max-width: 1870px)  {
+  .navbar {
+    .navbar-collapse {
+      .navbar-nav{
+        margin-left: 31%;
+    }
+      .nav-right {
+        margin-left: 500px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1700px) {
+  .navbar {
+    .navbar-collapse {
+      .navbar-nav{
+        margin-left: 30%;
+    }
+      .nav-right {
+        margin-left: 380px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1500px) {
+  .navbar {
+    .navbar-collapse {
+      .navbar-nav{
+        margin-left: 26%;
+    }
+      .nav-right {
+        margin-left: 235px;
+      }
+    }
+  }
+}
+// @media screen and (max-width: 1500px) {
+//   .navbar {
+//     .navbar-collapse {
+//       margin-left: 30%;
+     
+//       .nav-right {
+//         margin-left: 450px;
+//       }
+//     }
+//   }
+// }
+
+// @media screen and (min-width: 1224px) {
+//   .navbar {
+//     .navbar-collapse {
+//       .nav-right {
+//         margin-left: 400px;
+//       }
+//     }
+//   }
+// }
 
 @media (max-width: 375px) {
   .background-black {
@@ -104,7 +162,7 @@
     }
     .navbar-collapse {
       background-color: #343a40;
-      margin-left:150px;
+      margin-left: 150px;
       margin-right: -16px;
       .navbar-nav {
         margin: 0;
@@ -113,7 +171,8 @@
       .nav-item {
         margin: 5px 0;
       }
-      .nav-right {    align-items: baseline;
+      .nav-right {
+        align-items: baseline;
 
         margin-left: 0;
         margin-right: 20px;

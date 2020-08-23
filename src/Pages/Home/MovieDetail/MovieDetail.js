@@ -4,17 +4,15 @@ import { createAction } from "../../../Redux/Action/Action";
 import { FETCH_MOVIE_DETAIL } from "../../../Redux/Action/Type";
 import { fetchDetailMovie } from "../../../Redux/Action/MovieAction";
 import img from "../../../img/play-video.png";
-import LichChieu from "./nav/LichChieu/LichChieu";
-import ThongTin from "./nav/ThongTin";
+import LichChieu from "./LichChieu";
+import ThongTin from "./ThongTin";
 import Header from "../../Home/Header";
-import DanhGia from "./nav/DanhGia";
 
 class MovieDetail extends Component {
   constructor(props) {
     super(props);
     this.state = {
       table: this.renderTable("LichChieu"),
-      flag: true,
     };
   }
   renderTable = (nav) => {
@@ -45,8 +43,21 @@ class MovieDetail extends Component {
 
     return (
       <Fragment>
-        <Header />
-
+        <Header navbar="movieDetail" />
+        <div className="modal" id="TrailerDetail">
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <iframe
+                width="1000"
+                height="600"
+                src={movieDetail.trailer}
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
         <div className="movie-detail1">
           <div className="movie-detail">
             <div className="movie-detail-bg">
@@ -57,22 +68,16 @@ class MovieDetail extends Component {
             </div>
             <div className="movie-info">
               <div className="movie-img">
-                <div className="movie-img-hover">
-                  <a href="">
+                <div
+                  data-toggle="modal"
+                  data-target="#TrailerDetail"
+                  className="movieIMG"
+                >
+                  <img src={movieDetail.hinhAnh} />
+                  <div className="movie-img-hover">
                     <img src={img} alt="" />
-                  </a>
+                  </div>
                 </div>
-                <div className="trailer">
-                  <iframe
-                    width="375"
-                    height="285"
-                    src={movieDetail.trailer}
-                    frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-                <img src={movieDetail.hinhAnh} />
               </div>
               <div className="movie-text">
                 <span>
@@ -95,7 +100,7 @@ class MovieDetail extends Component {
                 <div className="circle-percent">
                   <span>7.4</span>
                 </div>
-                <div className='star'>
+                <div className="star">
                   <i class="fa fa-star"></i>
                   <i class="fa fa-star"></i>
                   <i class="fa fa-star"></i>
@@ -111,7 +116,6 @@ class MovieDetail extends Component {
                         onClick={() => {
                           this.setState({
                             table: this.renderTable("LichChieu"),
-                            flag: true,
                           });
                         }}
                       >
@@ -123,7 +127,6 @@ class MovieDetail extends Component {
                         onClick={() => {
                           this.setState({
                             table: this.renderTable("ThongTin"),
-                            flag: false,
                           });
                         }}
                       >

@@ -145,7 +145,8 @@ class Booking extends Component {
       giaVe: item.giaVe,
     }));
 
-    let maLichChieu = this.props.history.location.pathname.slice(8, 14);
+    let maLichChieu = this.props.history.location.pathname.slice(9, 14);
+    console.log(maLichChieu);
 
     let user = JSON.parse(localStorage.getItem("credentials"));
     Axios({
@@ -184,6 +185,7 @@ class Booking extends Component {
         }
       })
       .catch((err) => {
+        console.log(err.response.data);
         Swal.fire("Đặt Ghế Thất Bại !!", err.response.data, "error");
       });
   };

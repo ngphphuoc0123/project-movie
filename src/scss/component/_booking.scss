@@ -410,7 +410,7 @@
         margin-top: spacing(1);
         .listDay {
           position: absolute;
-          left: 21%;
+          left: 17%;
           .listDay-item {
             margin: 0;
             padding-top: 9px;
@@ -427,7 +427,7 @@
           display: grid;
           grid-template-columns: repeat(16, 1fr);
           text-align: center;
-          width: 50%;
+          width: 60%;
           margin: 0 auto;
 
           .seatCheckOut-item {
@@ -485,7 +485,7 @@
             }
             .nameSeat {
               color: gray;
-              font-size: 4;
+              font-size: 18px;
               position: absolute;
               top: 0;
               left: 0;
@@ -498,40 +498,73 @@
             .seatCheckOut-colorItem {
               margin: 0 20px;
               display: flex;
-              width: 10%;
+              width: 13%;
               .seatChoose {
                 background-color: lime;
                 border-radius: 6px;
-                font-size: 20px;
                 color: lime;
               }
 
               .seatChosen {
                 border-radius: 6px;
-                font-size: 20px;
                 color: #fd0000;
                 background-color: #fd0000;
               }
 
               .seatCannotChoose {
                 border-radius: 6px;
-                font-size: 20px;
                 color: #e7eaec;
                 background-color: #e7eaec;
               }
 
               .seatVip {
                 border-radius: 6px;
-                font-size: 20px;
                 color: #f7b500;
                 background-color: #f7b500;
               }
               .seatThuong {
                 border-radius: 6px;
-                font-size: 20px;
                 color: #1f2e46;
                 background-color: #1f2e46;
               }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1700px) {
+  .booking {
+    .seatCheckOut {
+      .seatCheckOut-content {
+        .seatCheckOut-seatMap {
+          .listDay {
+            left: 16%;
+          }
+          .seatCheckOut-listSeat{
+            width: 60%;
+          }
+        }
+        
+      }
+    }
+  }
+}
+@media screen and (max-width: 1500px) {
+  .booking {
+    .seatCheckOut {
+      .seatCheckOut-content {
+        .seatCheckOut-seatMap {
+          .listDay {
+            left: 12%;
+          }
+          .seatCheckOut-listSeat{
+            width: 75%;
+          }
+          .seatCheckOut-typeSeats {
+            .seatCheckOut-colorItem{
+              width: 15%  !important ;
             }
           }
         }
@@ -549,6 +582,7 @@
       position: absolute;
       width: 101%;
       top: 130%;
+      left: 0;
       box-shadow: none;
       .right-content {
         overflow-y: hidden;

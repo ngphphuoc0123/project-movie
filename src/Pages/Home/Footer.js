@@ -42,7 +42,7 @@ export default class Footer extends Component {
     };
     return (
       <Fragment>
-        <div className="appHomeControl">
+        <div className="appHomeControl" id='appHomeControl'>
           <div className="container">
             <div className="row">
               <div className="col-6 left">

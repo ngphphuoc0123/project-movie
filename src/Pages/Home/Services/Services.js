@@ -33,19 +33,19 @@ class Services extends Component{
         break;
     }
   };
-  changePage = (movieDetail,maLichChieu) => {
+  changePage = (movieDetail,maLichChieu,history) => {
     if (movieDetail) {
       localStorage.setItem("maLichChieu", maLichChieu);
 
       if (JSON.parse(localStorage.getItem("credentials"))) {
-        this.props.history.push(`/booking/${maLichChieu}`);
+        history.push(`/booking/${maLichChieu}`);
       } else {
         {
           Swal.fire('Bạn phải đăng nhập để có thể mua vé !!!','', "error").then(()=>{
-            this.props.history.push(`/signin`);
+            history.push(`/signin`);
           })
         }
-      }
+      } 
     }
   };
 }
