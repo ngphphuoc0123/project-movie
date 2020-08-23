@@ -53,7 +53,9 @@
     font-size: 20px;
     font-weight: 500;
     color: white;
-
+    a {
+      color: white;
+    }
     .logOut {
       cursor: pointer;
       margin-bottom: 0;
@@ -87,12 +89,12 @@
     }
   }
 }
-@media screen and (max-width: 1870px)  {
+@media screen and (max-width: 1870px) {
   .navbar {
     .navbar-collapse {
-      .navbar-nav{
+      .navbar-nav {
         margin-left: 31%;
-    }
+      }
       .nav-right {
         margin-left: 500px;
       }
@@ -102,9 +104,9 @@
 @media screen and (max-width: 1700px) {
   .navbar {
     .navbar-collapse {
-      .navbar-nav{
+      .navbar-nav {
         margin-left: 30%;
-    }
+      }
       .nav-right {
         margin-left: 380px;
       }
@@ -114,9 +116,9 @@
 @media screen and (max-width: 1500px) {
   .navbar {
     .navbar-collapse {
-      .navbar-nav{
+      .navbar-nav {
         margin-left: 26%;
-    }
+      }
       .nav-right {
         margin-left: 235px;
       }
@@ -127,7 +129,7 @@
 //   .navbar {
 //     .navbar-collapse {
 //       margin-left: 30%;
-     
+
 //       .nav-right {
 //         margin-left: 450px;
 //       }

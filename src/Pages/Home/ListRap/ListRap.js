@@ -38,8 +38,9 @@ class ListRap extends Component {
   }
   render() {
     return (
-      <div className="container">
-        <div className="cinemaa" id="cinema">
+      <div className="container" id="cinema">
+        <div className='background'></div>
+        <div className="cinemaa">
           <div className="cinema">
             <ul>{this.renderLogo()}</ul>
           </div>

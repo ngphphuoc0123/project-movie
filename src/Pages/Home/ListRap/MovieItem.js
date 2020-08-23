@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import FilmTime from "./FilmTime";
 import { withRouter } from "react-router-dom";
 import { services } from "../Services";
+import FilmDate from "./FilmDate";
 
 class MovieItem extends Component {
   constructor(props) {
@@ -9,16 +10,17 @@ class MovieItem extends Component {
     this.state = {
       maCumRap: "",
       maHeThongRap: "",
+      openDay: true,
+      openTime: false,
       date: "",
-      activeDay: "",
-      isOpen: false,
+      active: "",
     };
   }
   changePage = (maLichChieu) => {
     let { film, history } = this.props;
     services.changePage(film, maLichChieu, history);
   };
-  renderDateSlice = (maPhim) => {
+  renderFilmDateTime = (maPhim) => {
     let film = this.props
       .checkMaCumRap()
       .danhSachPhim.find((phim) => maPhim === phim.maPhim);
@@ -33,61 +35,26 @@ class MovieItem extends Component {
 
       // lọc ra giữ lại 2 ngày đầu tiên
       let listDaySlice = listDaySort.slice(0, 2);
-      return listDaySlice;
+      return listDaySlice.map((day, index) => {
+        return (
+          <Fragment>
+            <FilmDate day={day} film={film} key={index} />
+          </Fragment>
+        );
+      });
     }
   };
-  renderFilmDateTime = (maPhim) => {
-    return this.renderDateSlice(maPhim).map((day, index) => {
-      return (
-        <Fragment>
-          <div
-            key={index}
-            className={
-              index === this.state.activeDay ? "active date-item" : "date-item"
-            }
-            style={{ padding: "10px" }}
-            onClick={() => {
-              this.setState({ activeDay: index, date: day });
-            }}
-          >
-            <p>{day}</p>
-          </div>
-        </Fragment>
-      );
-    });
-  };
-  renderFilmTime = (maPhim) => {
-    // sort ra lịch chiếu của từng phim
-    let film = this.props
-      .checkMaCumRap()
-      .danhSachPhim.find((phim) => maPhim === phim.maPhim);
 
-    // lọc ra suất chiếu theo ngkày
-    let xuatChieu = film.lstLichChieuTheoPhim.filter((item) => {
-      return (
-        new Date(item.ngayChieuGioChieu).toLocaleDateString() ===
-        this.state.date
-      );
-    });
-
-    // trả về suất chiếu theo ngày
-    return xuatChieu.map((item) => {
-      let time = new Date(item.ngayChieuGioChieu).toLocaleTimeString();
-      time = time.slice(0, 5);
-      return (
-        <FilmTime
-          time={time}
-          maLichChieu={item.maLichChieu}
-          changePage={this.changePage}
-        />
-      );
-    });
-  };
   render() {
-    let { film, history } = this.props;
+    let { film } = this.props;
     return (
       <div className="cinema-film">
-        <div className="film-info">
+        <div
+          className="film-info"
+          onClick={() => {
+            this.setState({ openDay: !this.state.openDay });
+          }}
+        >
           <img
             src={film.hinhAnh}
             alt=""
@@ -95,7 +62,7 @@ class MovieItem extends Component {
           />
           <div className="film-detail">
             <p>
-              <span>
+              <span className='film-name'>
                 <strong>{film.tenPhim}</strong>
               </span>
               <span className="film-imdb">138 phút - TIX 7.8 - IMDb 6.9</span>
@@ -105,16 +72,15 @@ class MovieItem extends Component {
 
         <div
           className="date-time"
-          style={{ paddingright: "10px" }}
+          style={{ paddingRight: "10px" }}
           onClick={() => {
             this.setState({ isOpen: !this.state.isOpen });
           }}
         >
-          <div className="date">
-            {this.renderFilmDateTime(film.maPhim, film.tenPhim)}
-          </div>
-          {this.state.isOpen ? (
-            <div className="time">{this.renderFilmTime(film.maPhim)}</div>
+          {this.state.openDay ? (
+            <div className="date">
+              {this.renderFilmDateTime(film.maPhim, film.tenPhim)}
+            </div>
           ) : null}
         </div>
       </div>

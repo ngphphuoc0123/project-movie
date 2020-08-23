@@ -39,8 +39,8 @@ class ListMovie extends Component {
         slidesToScroll: 4,
         slidesPerRow: 2,
         centerPadding: "60px",
-        autoplay: true,
-        autoplaySpeed: 2900,
+        // autoplay: true,
+        // autoplaySpeed: 2900,
       };
     } else {
       return {
@@ -49,8 +49,8 @@ class ListMovie extends Component {
         slidesToScroll: 1,
         slidesPerRow: 2,
         centerPadding: "60px",
-        autoplay: true,
-        autoplaySpeed: 2900,
+        // autoplay: true,
+        // autoplaySpeed: 2900,
       };
     }
   };

@@ -1,3 +1,11 @@
+.background {
+  max-width: 940px;
+  margin: auto;
+  padding-top: 120px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-image: url('../../img/linear.png');
+}
 .cinemaa {
   padding-bottom: 50px;
 }
@@ -122,16 +130,21 @@
     .date-time {
       .date {
         cursor: pointer;
-        text-align: center;
         color: #000;
-        display: flex;
+        // display: flex;
+        // position: relative;
         .date-item {
           opacity: 0.5;
+          p {
+            text-align: left;
+          }
         }
-      }
-      .time {
-        margin: 10px;
-        height: 40px;
+        // .time {
+        //   // position: absolute;
+        //   // top: 70%;
+
+        //   margin: 10px;
+        //   height: 50px;
         .time-item {
           cursor: pointer;
           width: 12%;
@@ -153,7 +166,7 @@
           span {
             font-size: 18px;
             font-weight: 1000;
-            color: #108f3e;
+            color: #f7971e;
             letter-spacing: -0.16px;
           }
         }
@@ -184,6 +197,21 @@
           line-height: 1.7;
           font-size: 12px;
           color: #9b9b9b;
+          .film-name {
+            position: relative;
+            padding-left: 40px;
+            &:before {
+              position: absolute;
+              left: 0;
+              border-radius: 5px;
+              color: white;
+              content: "C18";
+              text-align: center;
+              width: 35px;
+              height: 20px;
+              background-color: #f7971e;
+            }
+          }
           span {
             font-size: 14px;
             text-align: left;

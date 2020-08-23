@@ -14,7 +14,7 @@ class Header extends Component {
         return (
           <Fragment>
             <li className="nav-item">
-              <Link to='../' className="nav-link" href="#">
+              <Link to="../" className="nav-link" href="#">
                 Trang Chủ
               </Link>
             </li>
@@ -87,7 +87,7 @@ class Header extends Component {
             </li>
             <li className="nav-item nav-right">
               {this.props.credential ? (
-                <Fragment>
+                <>
                   {/* <i className="fas fa-user-circle" /> */}
                   <p
                     type="button"
@@ -105,13 +105,11 @@ class Header extends Component {
                   >
                     Thoát
                   </p>
-                </Fragment>
+                </>
               ) : (
                 <>
-                  <div>
-                    {/* <i className="fas fa-user-circle" /> */}
-                    <Link to="/signin">Đăng Nhập</Link>
-                  </div>
+                  {/* <i className="fas fa-user-circle" /> */}
+                  <Link to="/signin">Đăng Nhập</Link>
                 </>
               )}
             </li>
@@ -137,9 +135,7 @@ class Header extends Component {
           </button>
 
           <div className="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul className="navbar-nav">
-              {this.renderNavbarItem()}
-            </ul>
+            <ul className="navbar-nav">{this.renderNavbarItem()}</ul>
           </div>
           {/* modal lịch sử đặt vé */}
         </nav>

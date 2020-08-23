@@ -1,6 +1,5 @@
 #listFilm {
   padding-top: 50px;
-  padding-bottom: 50px;
   .listFilmMenu {
     margin-bottom: 30px;
     margin-top: 30px;
@@ -63,9 +62,41 @@
     .film-img {
       position: relative;
       height: 80%;
+      &:before {
+        position: absolute;
+        content: "C18";
+        top: 5px;
+        left: 5px;
+        text-align: center;
+        justify-items: center;
+        width: 40px;
+        height: 25px;
+        font-weight: 500;
+        color: black;
+        border-radius: 5px;
+        background-color: #f7971e;
+      }
+      .film-rate {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        text-align: center;
+        justify-items: center;
+        width: 60px;
+        height: 60px;
+        color: black;
+        border-radius: 5px;
+        background-color: #00000082;
+        .star {
+          color: #f7971e;
+        }
+        .film-point {
+          color: white;
+          font-weight: 500;
+        }
+      }
       img {
         border-radius: 5px;
-
         height: 100%;
       }
       .filmOverlay {
@@ -95,7 +126,7 @@
           width: 100%;
           background-color: red;
         }
-        a{
+        a {
           cursor: pointer;
         }
       }
@@ -122,7 +153,7 @@
     }
   }
 }
-#Trailer{
+#Trailer {
   .modal-dialog {
     max-width: 1000px;
     height: 50%;

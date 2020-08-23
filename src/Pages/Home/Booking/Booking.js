@@ -181,7 +181,7 @@ class Booking extends Component {
             }
           });
         } else {
-          Swal.fire("Mời Bạn Chọn Ghế !!", "", "error");
+          Swal.fire("Mời Bạn Chọn Ghế !!", "", "warning");
         }
       })
       .catch((err) => {

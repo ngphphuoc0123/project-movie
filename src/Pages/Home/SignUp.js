@@ -18,7 +18,8 @@ class SignUp extends Component {
       })
       .catch((err) => {
         console.log(err);
-        Swal.fire("Đăng Kí Thất Bại !!", err.response.data, "error")      });
+        Swal.fire("Đăng Kí Thất Bại !!", err.response.data, "error");
+      });
   };
   render() {
     return (
@@ -127,8 +128,14 @@ class SignUp extends Component {
                   <button className="button">Submit</button>
                 </div>
                 <div className="text-center button">
+
                   <Link to="/" className="button">
                     Back To Home
+                  </Link>
+                </div>
+                <div className="text-center button">
+                  <Link to="/" className="button">
+                    Sign In
                   </Link>
                 </div>
               </Form>
