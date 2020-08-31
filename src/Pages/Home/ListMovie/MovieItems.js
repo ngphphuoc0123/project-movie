@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import img from "../../../../img/play-video.png";
+import img from "../../../img/play-video.png";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 

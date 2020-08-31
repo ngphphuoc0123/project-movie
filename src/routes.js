@@ -36,6 +36,11 @@ const routesHome = [
 ];
 const routesAdmin = [
   {
+    path: "/admin",
+    exact: false,
+    component: AdminUser,
+  },
+  {
     path: "/adminUser",
     exact: false,
     component: AdminUser,

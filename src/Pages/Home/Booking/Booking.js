@@ -2,9 +2,10 @@ import React, { Component, Fragment } from "react";
 import img from "../../../img/screen.png";
 import { connect } from "react-redux";
 import { fetchBookingAction } from "../../../Redux/Action/BookingAction";
-import BookingItems from "./BookingItems/BookingItems";
+import BookingItems from "./BookingItems";
 import Axios from "axios";
 import Swal from "sweetalert2";
+import { bookingService } from "../../../API";
 
 class Booking extends Component {
   constructor(props) {
@@ -18,8 +19,8 @@ class Booking extends Component {
   checkLogin = () => {
     const abc = localStorage.getItem("credentials");
     if (abc === null || !localStorage.getItem("credentials")) {
+      Swal.fire("Bạn Cần Đăng Nhập Để Đặt Vé !!", "", "warning");
       this.props.history.push("/signin");
-      Swal.fire("Bạn Cần Đăng Nhập Để Đặt Vé !!", "", "error");
     }
   };
   renderInfoFilm = (value) => {
@@ -149,40 +150,20 @@ class Booking extends Component {
     console.log(maLichChieu);
 
     let user = JSON.parse(localStorage.getItem("credentials"));
-    Axios({
-      method: "POST",
-      url: "http://movie0706.cybersoft.edu.vn/api/QuanLyDatVe/DatVe",
-      data: {
+
+    //Axio
+    bookingService
+      .fetchBookingAdminAPI(
         maLichChieu,
         danhSachVe,
-        taiKhoanNguoiDung: user.taiKhoan,
-      },
-      headers: {
-        Authorization: `Bearer ${user.accessToken}`,
-      },
-    })
+        user.taiKhoan,
+        user.accessToken
+      )
       .then((rs) => {
-        if (this.state.booking.length > 0) {
-          Swal.fire({
-            title: "Bạn Chắc Chắn Đặt Ghế Chứ?",
-            text: "Bạn không thể hủy ghế nếu đã thanh toán thành công !!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Đặt!",
-            cancelButtonText: "Hủy",
-          }).then((result) => {
-            if (result.value) {
-              Swal.fire("Đặt Ghế Thành Công !!", "", "success").then(() => {
-                localStorage.setItem("maLichChieu", null);
-                this.props.history.push("/");
-              });
-            }
-          });
-        } else {
-          Swal.fire("Mời Bạn Chọn Ghế !!", "", "warning");
-        }
+        Swal.fire("Đặt Ghế Thành Công !!", "", "success").then(() => {
+          localStorage.setItem("maLichChieu", null);
+          this.props.history.push("/");
+        });
       })
       .catch((err) => {
         console.log(err.response.data);
@@ -295,7 +276,28 @@ class Booking extends Component {
               this.state.booking.length > 0 ? "datVe" : "datVe-non"
             } `}
             onClick={() => {
-              this.handleBookingToUser();
+              if (this.state.booking.length > 0) {
+                Swal.fire({
+                  title: "Bạn Chắc Chắn Đặt Ghế Chứ?",
+                  text: "Bạn không thể hủy ghế nếu đã thanh toán thành công !!",
+                  icon: "warning",
+                  showCancelButton: true,
+                  confirmButtonColor: "#3085d6",
+                  cancelButtonColor: "#d33",
+                  confirmButtonText: "Đặt!",
+                  cancelButtonText: "Hủy",
+                }).then((result) => {
+                  if (result.value) {
+                    this.handleBookingToUser()
+                  }
+                });
+              } else {
+                Swal.fire(
+                  "Mời Bạn Chọn Ghế !!",
+                  "Bạn không thể đặt vé khi chưa chọn ghế !!",
+                  "warning"
+                );
+              }
             }}
           >
             Đặt Vé

@@ -38,7 +38,7 @@ class MovieItem extends Component {
       return listDaySlice.map((day, index) => {
         return (
           <Fragment>
-            <FilmDate day={day} film={film} key={index} />
+            <FilmDate day={day} film={film} key={index} changePage={this.changePage} />
           </Fragment>
         );
       });

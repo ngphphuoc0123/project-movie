@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
-import MovieItems from "./MovieItems/MovieItems";
+import MovieItems from "./MovieItems";
 import { fetchMovie } from "../../../Redux/Action/MovieAction";
 import ListRap from "../ListRap/ListRap";
 import Slider from "react-slick";

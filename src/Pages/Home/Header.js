@@ -4,7 +4,7 @@ import { NavLink, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { createAction } from "../../Redux/Action/Action";
 import { FETCH_CREDENTIAL } from "../../Redux/Action/Type";
-import UserInfo from "../UserInfo/UserInfo";
+import UserInfo from "./UserInfo";
 
 class Header extends Component {
   renderNavbarItem = () => {

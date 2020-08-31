@@ -1,6 +1,7 @@
 import { bookingService } from "../../API";
 import { createAction } from "./Action";
 import { FETCH_MALICHCHIEU } from "./Type";
+import Swal from "sweetalert2";
 
 export const fetchBookingAction = (maLichChieu) => {
   return (dispatch) => {

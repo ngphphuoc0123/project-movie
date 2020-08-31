@@ -24,12 +24,13 @@ export default class FilmDate extends Component {
     return xuatChieu.map((item) => {
       let time = new Date(item.ngayChieuGioChieu).toLocaleTimeString();
       time = time.slice(0, 5);
+      console.log(item);
       return (
-        <FilmTime
-          time={time}
-          maLichChieu={item.maLichChieu}
-          changePage={this.props.changePage}
-        />
+          <FilmTime
+            time={time}
+            maLichChieu={item.maLichChieu}
+            changePage={this.props.changePage}
+          />
       );
     });
   };
@@ -51,7 +52,7 @@ export default class FilmDate extends Component {
           <p>{day}</p>
         </div>
 
-        {this.state.isOpen ? <>{this.renderFilmTime()}</> : null}
+        {this.state.isOpen ? <div className='time'>{this.renderFilmTime()}</div> : null}
       </Fragment>
     );
   };
