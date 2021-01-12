@@ -1,0 +1,116 @@
+@media (min-width: 375px) {
+  .howItWork {
+    position: relative;
+    width: 100vw;
+    height: 900px;
+    background-color: #001a53;
+    overflow: hidden;
+    .container {
+      z-index: 999;
+      position: absolute;
+      left: calc(50% - 600px);
+    }
+    &-title {
+      padding-top: 2rem;
+    }
+    &-switch {
+      width: 30%;
+      border: 2px solid white;
+      background-color: white;
+      margin: 0 auto;
+      border-radius: 2rem;
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+      &-driverApp,
+      &-passengerApp {
+        width: 50%;
+        padding: 1rem 2rem;
+        border-radius: 2rem;
+        background: #ffffff;
+        color: #002070;
+        border: none;
+        line-height: 120%;
+        font-weight: 600;
+        &.active {
+          background: #002070;
+          color: #ffffff;
+        }
+        &:focus {
+          outline: none;
+          box-shadow: none;
+        }
+      }
+    }
+    &-iPhone {
+      padding-top: 2rem;
+      padding-bottom: 8rem;
+      width: 20%;
+      margin: 0 auto;
+    }
+    &-bg {
+      position: absolute;
+      top: 0;
+      left: calc(50% - 589px);
+    }
+  }
+}
+@media (min-width: 768px) {
+  .howItWork {
+    position: relative;
+    width: 100vw;
+    height: 600px;
+    background-color: #001a53;
+    overflow: hidden;
+    .container {
+      z-index: 999;
+      position: absolute;
+      left: calc(50% - 370px);
+    }
+    &-title {
+      padding-top: 2rem;
+    }
+    &-switch {
+      width: 50%;
+      border: 2px solid white;
+      background-color: white;
+      margin: 0 auto;
+      border-radius: 2rem;
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+      &-driverApp,
+      &-passengerApp {
+        width: 50%;
+        padding: 1rem 2rem;
+        border-radius: 2rem;
+        background: #ffffff;
+        color: #002070;
+        border: none;
+        line-height: 120%;
+        font-weight: 600;
+        &.active {
+          background: #002070;
+          color: #ffffff;
+        }
+        &:focus {
+          outline: none;
+          box-shadow: none;
+        }
+      }
+    }
+    &-iPhone {
+      padding-top: 2rem;
+      padding-bottom: 8rem;
+      width: 20%;
+      margin: 0 auto;
+    }
+    &-bg {
+      position: absolute;
+      top: 0;
+      left: calc(50% - 589px);
+    }
+  }
+}

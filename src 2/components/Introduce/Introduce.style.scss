@@ -1,0 +1,137 @@
+@media (min-width: 375px) {
+  .introduce {
+    width: 100vw;
+    height: 800px;
+    background: #000f35;
+    color: black;
+    position: relative;
+    overflow: hidden;
+
+    &-left {
+      padding: 1rem 1rem !important;
+      &-title {
+        line-height: 120%;
+        font-weight: bold;
+        font-size: 2.5rem;
+        color: #de0085;
+      }
+      .download {
+        padding-top: 1rem;
+      }
+      &-subtitle {
+        line-height: 170%;
+        letter-spacing: 0.02em;
+        font-size: 1rem;
+        padding: 1rem 0;
+        color: #a7b2cc;
+        margin: 0;
+      }
+    }
+    &-right {
+      padding: 2rem !important;
+      width: 100%;
+    }
+    &-bg {
+      // introduce and howitwork use the same background so that i set css for wedAdmin background here for short
+
+      &howItWork {
+        position: absolute;
+        top: 650px;
+        width: 1800px;
+        height: 265px;
+      }
+      position: absolute;
+      top: 550px;
+      width: 1800px;
+      height: 265px;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .introduce {
+    height: 650px;
+    padding-top: 50px;
+    &-left {
+      padding: 0.5rem 0.5rem !important;
+      padding-right: 0 !important;
+      padding-top: 3rem !important;
+      &-title {
+        font-size: 2.65rem;
+      }
+      .download {
+        padding-top: 1rem;
+      }
+      &-subtitle {
+        line-height: 170%;
+        letter-spacing: 0.02em;
+        font-size: 1rem;
+        padding: 2rem 0;
+        color: #a7b2cc;
+      }
+    }
+    &-right {
+      padding: 0rem !important;
+      width: 100%;
+    }
+    &-bg {
+      // introduce and howitwork use the same background so that i set css for wedAdmin background here for short
+
+      &howItWork {
+        position: absolute;
+        top: 650px;
+        width: 1800px;
+        height: 265px;
+      }
+      top: 400px;
+    }
+  }
+}
+@media (min-width: 1280px) {
+  .introduce {
+    width: 100vw;
+    height: 850px;
+    background: #000f35;
+    padding-top: 100px;
+    color: black;
+    position: relative;
+    overflow: hidden;
+
+    &-left {
+      padding: 8rem 5rem !important;
+      &-title {
+        line-height: 54px;
+        font-weight: bold;
+        font-size: 3rem;
+        color: #de0085;
+      }
+      .download {
+        padding-top: 1rem;
+      }
+      &-subtitle {
+        line-height: 170%;
+        letter-spacing: 0.02em;
+        font-size: 1rem;
+        padding: 2rem 0;
+        color: #a7b2cc;
+      }
+    }
+    &-right {
+      padding: 2rem !important;
+      width: 100%;
+    }
+    &-bg {
+      // introduce and howitwork use the same background so that i set css for wedAdmin background here for short
+
+      &howItWork {
+        position: absolute;
+        top: 650px;
+        width: 1800px;
+        height: 265px;
+      }
+      position: absolute;
+      top: 600px;
+      width: 1800px;
+      height: 265px;
+    }
+  }
+}

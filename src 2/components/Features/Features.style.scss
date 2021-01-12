@@ -1,0 +1,94 @@
+@media (min-width: 375px) {
+  .features {
+    background-color: #001a53;
+    // height: 1200px;
+    &-content {
+      padding: 3rem;
+      .driver {
+        background-color: white;
+        border-radius: 2rem;
+        padding-top: 5rem;
+        padding-bottom: 2rem;
+        .image {
+          text-align: center;
+          height: 200px;
+          width: 342px;
+          > h1 {
+            font-weight: 600;
+            font-size: 1.5rem;
+            padding-bottom: 0.5rem;
+          }
+        }
+        .row-item {
+          padding: 1rem 0;
+          display: flex;
+          margin: 0 2rem;
+          border-bottom: 1px solid #e8e8e8;
+          svg {
+            font-size: 2rem;
+          }
+          .row-text {
+            text-align: left;
+            padding-left: 0.5rem;
+            padding-top: 0.2rem;
+
+            .row-title {
+              font-size: 1.5rem;
+              margin-bottom: 0.5rem;
+            }
+            .row-subtitle {
+              margin-bottom: 1rem;
+              color: #5d657a;
+            }
+          }
+        }
+      }
+    }
+    .viewAll {
+      text-align: center;
+      padding: 3rem;
+      font-weight: 600;
+      color: #407bff;
+    }
+  }
+}
+@media (min-width: 768px) {
+  .features {
+    &-content {
+      padding: 0rem;
+      .driver {
+        .image {
+          width: 230px;
+        }
+        .row-item {
+          padding: 1rem 0;
+          margin: 0 0.5rem;
+          border-bottom: 1px solid #e8e8e8;
+          svg {
+            font-size: 2rem;
+          }
+          .row-text {
+            text-align: left;
+            padding-left: 0.5rem;
+            padding-top: 0.2rem;
+
+            .row-title {
+              font-size: 1.5rem;
+              margin-bottom: 0.5rem;
+            }
+            .row-subtitle {
+              margin-bottom: 1rem;
+              color: #5d657a;
+            }
+          }
+        }
+      }
+    }
+    .viewAll {
+      text-align: center;
+      padding: 3rem;
+      font-weight: 600;
+      color: #407bff;
+    }
+  }
+}

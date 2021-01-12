@@ -1,0 +1,48 @@
+@media (min-width: 1280px) {
+  .navbar-expand-xl {
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    .navbar-collapse {
+      display: flex !important;
+      flex-basis: auto;
+    }
+    .navbar-toggler {
+      display: none;
+    }
+    .navbar-nav {
+      flex-direction: row;
+    }
+  }
+}
+
+@media (min-width: 375px) {
+  .header {
+    height: 58.75px;
+    .navbar {
+      &-brand {
+        padding-left: 5rem;
+      }
+      .navbar-toggler {
+        margin-right: 5rem;
+
+        color: white;
+        border-color: white;
+        .navbar-toggler-icon {
+          background-color: white;
+          color: white;
+        }
+      }
+      .navbar-collapse {
+        padding-right: 5rem;
+
+        .navbar-nav {
+          .nav-link {
+            color: white;
+            font-size: 1.25rem;
+            padding: 0.5rem 1rem;
+          }
+        }
+      }
+    }
+  }
+}

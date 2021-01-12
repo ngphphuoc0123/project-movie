@@ -1,0 +1,48 @@
+.footer {
+  margin-top: 2rem;
+  padding: 3rem 0rem;
+  background-color: #000f35;
+  color: white;
+  font-size: 1.5rem;
+  .download {
+    display: flex;
+    justify-content: space-between;
+    &-left {
+      padding-bottom: 2rem;
+      h1 {
+        font-size: 1.5rem;
+
+        padding-bottom: 2rem;
+      }
+    }
+    &-right {
+      > p {
+        font-size: 1.5rem;
+      }
+      .select-input {
+        background-color: #000f35;
+        color: white;
+        border: #000f35;
+        font-size: 1.3rem;
+        width: 120px;
+        &:focus {
+          outline: none;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+  .copy-right {
+    display: flex;
+    justify-content: space-between;
+    .text {
+      color: #a7b2cc;
+      font-size: 16px;
+    }
+    .footer-sosial {
+      svg {
+        font-size: 2.5rem;
+      }
+    }
+  }
+}
